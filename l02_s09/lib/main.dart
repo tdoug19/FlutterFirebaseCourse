@@ -15,6 +15,21 @@ class MyApp extends StatelessWidget {
           leading: new Icon(
             Icons.cake
           ),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.sd_card),
+              tooltip: 'hi',
+              onPressed: () => {},
+            ),
+            new IconButton(
+              icon: new Icon(Icons.pie_chart),
+              tooltip:'Wow',
+              onPressed: () => {},
+            ),
+            new IconButton(
+              onPressed: () => {},
+                icon: icon)
+          ],
         ),
         body: new Center(
           child: new Text('Hello World'),
