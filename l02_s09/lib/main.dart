@@ -111,6 +111,9 @@ class MyApp extends StatelessWidget {
                     ),
                   ]
               ),
+              new Image.network(
+                  'http://thecatapi.com/api/images/get?formet=src&type=gif',
+              ),
             ],
           ),
         ),
