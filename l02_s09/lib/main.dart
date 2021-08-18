@@ -48,8 +48,32 @@ class MyApp extends StatelessWidget {
               ),
             ]
         ),
-        body: new Center(
-          child: new Text('Hello World'),
+        body: new Container(
+          padding: new EdgeInsets.all(20.0),
+          child: new Column(
+            children: [
+              new Text("Hello World"),
+              new TextField(
+                decoration: new InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Please Enter Text'
+                ),
+              ),
+              new Checkbox(
+                  value: false,
+                  onChanged: null,
+              ),
+              new Radio<int>(
+                value: 0,
+                groupValue: 0,
+                onChanged: null,
+              ),
+              new Switch(
+                value: false,
+                onChanged: null,
+              ),
+            ],
+          ),
         ),
       ),
     );
