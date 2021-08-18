@@ -27,9 +27,26 @@ class MyApp extends StatelessWidget {
               onPressed: () => {},
             ),
             new IconButton(
+              icon: new Icon(Icons.photo_album),
               onPressed: () => {},
-                icon: icon)
+               ),
           ],
+        ),
+        bottomNavigationBar: new BottomNavigationBar(
+            items: [
+              new BottomNavigationBarItem(
+                icon: new Icon(Icons.account_balance),
+                title: new Text("Bank")
+              ),
+              new BottomNavigationBarItem(
+                  icon: new Icon(Icons.apps),
+                  title: new Text("Apps")
+              ),
+              new BottomNavigationBarItem(
+                  icon: new Icon(Icons.shopping_basket),
+                  title: new Text("Cart")
+              ),
+            ]
         ),
         body: new Center(
           child: new Text('Hello World'),
