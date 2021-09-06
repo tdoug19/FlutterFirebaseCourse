@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
                 'Trevor Douglas',
                 style: TextStyle(
                   fontSize: 40.0,
+                  fontFamily: 'Pacifico',
                 ),
               ),
             ],
