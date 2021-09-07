@@ -44,60 +44,64 @@ class MyApp extends StatelessWidget {
               SizedBox(
                 height: 10.0
               ),
-              Container(
-                padding: EdgeInsets.all(10.0),
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 25.0
                 ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.phone,
-                      size: 50.0,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      "306.351.0715",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: 'SourceSansPro',
-                        letterSpacing: 1.5,
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.phone,
+                        size: 50.0,
                         color: Colors.teal,
-                      )
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(
-                    vertical: 10.0,
-                    horizontal: 25.0
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.email,
-                      size: 50.0,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                        "tdoug19gmail.com",
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        "306.351.0715",
                         style: TextStyle(
                           fontSize: 20.0,
                           fontFamily: 'SourceSansPro',
                           letterSpacing: 1.5,
                           color: Colors.teal,
                         )
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 25.0
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.email,
+                        size: 50.0,
+                        color: Colors.teal,
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                          "tdoug19gmail.com",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontFamily: 'SourceSansPro',
+                            letterSpacing: 1.5,
+                            color: Colors.teal,
+                          )
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
