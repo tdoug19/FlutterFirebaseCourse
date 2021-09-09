@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767452454574",
+    "project_id": "business-card-a1619",
+    "storage_bucket": "business-card-a1619.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767452454574:android:4500217a114259236b173f",
+        "android_client_info": {
+          "package_name": "com.trevordouglas.mi_td"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767452454574-qta8fd83unugqaa4cn27rammj8odj372.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-BZDE8rNo3oBi7Gz_N2rLqk6bfZ2tazQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767452454574-qta8fd83unugqaa4cn27rammj8odj372.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
