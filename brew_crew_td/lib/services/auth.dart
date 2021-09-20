@@ -5,7 +5,7 @@ class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;  //_ means private  I think
 
-
+/*
   //create User object based on FirebaseUser
   UserFirebase _userFromFirebaseUser(User? user) {
 
@@ -17,16 +17,22 @@ class AuthService {
     return _auth.authStateChanges()
     .map((User? user) => _userFromFirebaseUser(user));
   }
+*/
+  /** Cant return a null user from this state change */
+  Stream<User?> get user {
+    //return user;
+    return _auth.authStateChanges();
 
+  }
   // sign in anon
 
   Future signInAnon() async {
 
     try{
-      UserCredential result = await _auth.signInAnonymously();
-      User user = result.user!;
-
-      return _userFromFirebaseUser(user);
+      UserCredential userCredential = await _auth.signInAnonymously();
+      User? user = userCredential.user;
+      return user;
+      //return _userFromFirebaseUser(user);
 
     } catch (e) {
       print(e.toString());
