@@ -13,9 +13,15 @@ class Wrapper extends StatelessWidget {
 
     //Access the users state I suppose.
     final user = Provider.of<User?>(context);
-    print(user);
 
-    // return Home or Authenticate widget
-    return Authenticate();
+    //if the user is null, then the user has logged out.
+    print(user);
+    if(user == null){
+      return Authenticate();
+    }
+    else{
+      return Home();
+    }
+
   }
 }

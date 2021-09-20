@@ -5,19 +5,7 @@ class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;  //_ means private  I think
 
-/*
-  //create User object based on FirebaseUser
-  UserFirebase _userFromFirebaseUser(User? user) {
 
-    return UserFirebase(uid: user!.uid);
-  }
-
-  // auth change user stream
-  Stream<UserFirebase> get user {
-    return _auth.authStateChanges()
-    .map((User? user) => _userFromFirebaseUser(user));
-  }
-*/
   /** Cant return a null user from this state change */
   Stream<User?> get user {
     //return user;
@@ -43,6 +31,15 @@ class AuthService {
   // sign in with email and pw
   // register with email and pw
   // sign out as well
+
+  Future signOut() async {
+    try{
+      return await _auth.signOut();
+    }catch (e){
+      print(e.toString());
+      return null;
+    }
+  }
 
 
 }
