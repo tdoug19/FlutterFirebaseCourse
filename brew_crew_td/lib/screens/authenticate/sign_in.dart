@@ -11,6 +11,9 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
 
   final AuthService _auth = AuthService();
+  //Create variable for email and Password
+  String email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +26,39 @@ class _SignInState extends State<SignIn> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: ElevatedButton(
-          child: Text('Sign in Anon'),
-          onPressed: () async {
-            dynamic result = await _auth.signInAnon();
-            if (result == null){
-              print('error signing in');
-            }
-            else {
-              print('signed in');
-              print(result.uid);
-            }
-          }
-        )
+        child: Form(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 15.0),
+              TextFormField(
+                onChanged: (val){
+                  setState(() {
+                    email = val;
+                  });
+                },
+              ),
+              SizedBox(height: 15.0),
+              TextFormField(
+                obscureText: true,
+                onChanged: (val){
+                  setState(() {
+                    password = val;
+                  });
+                },
+              ),
+              SizedBox(height: 15.0),
+              ElevatedButton(
+                  onPressed: () async {
+                    print(email);
+                    print(password);
+                  },
+                  child: Text(
+                      'Sign In',
+                      style: TextStyle(color: Colors.white)),
+              ),
+            ]
+          )
+        ),
       ),
     );
   }
