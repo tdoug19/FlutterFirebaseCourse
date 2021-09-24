@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  //const Register({Key? key}) : super(key: key);
+  final Function toggleView;
 
+  //Constructor
+  Register({required this.toggleView});
   @override
   _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
+
+
   final AuthService _auth = AuthService();
   //Create variable for email and Password
   String email = '';
@@ -23,6 +28,16 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
         title: Text('Sign up in Brew Crew'),
+          actions: <Widget>[
+            TextButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('Sign In'),
+              style: TextButton.styleFrom(primary: Colors.black),
+              onPressed: (){
+                widget.toggleView();
+              },
+            ),
+          ]
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
