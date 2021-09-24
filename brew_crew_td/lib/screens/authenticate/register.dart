@@ -19,6 +19,7 @@ class _RegisterState extends State<Register> {
   //Create variable for email and Password
   String email = '';
   String password = '';
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +43,12 @@ class _RegisterState extends State<Register> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+            key: _formKey,
             child: Column(
                 children: <Widget>[
                   SizedBox(height: 15.0),
                   TextFormField(
+                    validator: (val) => val!.isEmpty ? 'Enter an email' : null,
                     onChanged: (val){
                       setState(() {
                         email = val;
@@ -54,6 +57,8 @@ class _RegisterState extends State<Register> {
                   ),
                   SizedBox(height: 15.0),
                   TextFormField(
+                    validator: (val) => val!. length < 6 ? 'Password must by 6 '
+                        'characters or more' : null,
                     obscureText: true,
                     onChanged: (val){
                       setState(() {
@@ -64,8 +69,12 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 15.0),
                   ElevatedButton(
                     onPressed: () async {
-                      print(email);
-                      print(password);
+                      if (_formKey.currentState!.validate()){
+                        print(email);
+                      }
+                      else {
+
+                      }
                     },
                     child: Text(
                         'Register',
