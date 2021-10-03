@@ -19,6 +19,7 @@ class _RegisterState extends State<Register> {
   //Create variable for email and Password
   String email = '';
   String password = '';
+  String error = '';
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -57,7 +58,7 @@ class _RegisterState extends State<Register> {
                   ),
                   SizedBox(height: 15.0),
                   TextFormField(
-                    validator: (val) => val!. length < 6 ? 'Password must by 6 '
+                    validator: (val) => val!.length < 6 ? 'Password must by 6 '
                         'characters or more' : null,
                     obscureText: true,
                     onChanged: (val){
@@ -70,15 +71,20 @@ class _RegisterState extends State<Register> {
                   ElevatedButton(
                     onPressed: () async {
                       if (_formKey.currentState!.validate()){
-                        print(email);
-                      }
-                      else {
-
+                        dynamic result = await _auth.registerWithEmailAndPassword(
+                            email,
+                            password);
+                        if (result == null){
+                          setState(() {
+                            error = 'please supply a valid email';
+                          });
+                        }
                       }
                     },
                     child: Text(
                         'Register',
-                        style: TextStyle(color: Colors.white)),
+                        style: TextStyle(color: Colors.white)
+                    ),
                   ),
                 ]
             )
