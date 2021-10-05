@@ -69,7 +69,12 @@ class _RegisterState extends State<Register> {
                   ),
                   SizedBox(height: 15.0),
                   ElevatedButton(
+                    child: Text(
+                      'Register',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     onPressed: () async {
+                      //Run those validators
                       if (_formKey.currentState!.validate()){
                         dynamic result = await _auth.registerWithEmailAndPassword(
                             email,
@@ -81,11 +86,12 @@ class _RegisterState extends State<Register> {
                         }
                       }
                     },
-                    child: Text(
-                        'Register',
-                        style: TextStyle(color: Colors.white)
-                    ),
                   ),
+                  SizedBox(height: 15.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.white),
+                  )
                 ]
             )
         ),

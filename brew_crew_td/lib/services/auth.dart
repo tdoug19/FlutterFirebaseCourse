@@ -31,7 +31,6 @@ class AuthService {
   // register with email and pw
   Future registerWithEmailAndPassword(String email, String password) async {
     try{
-
       UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
           email: email,
           password: password);
@@ -48,7 +47,7 @@ class AuthService {
   Future signInWithEmailAndPassword(String email, String password) async {
     try{
 
-      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
           email: email,
           password: password);
       User? user = userCredential.user;
@@ -56,14 +55,11 @@ class AuthService {
 
     }catch (e){
       print(e.toString());
-      return null;
+       return null;
     }
   }
 
-
-
   // sign out as well
-
   Future signOut() async {
     try{
       return await _auth.signOut();
