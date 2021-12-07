@@ -1,4 +1,5 @@
 import 'package:brew_crew_td/models/user.dart';
+import 'package:brew_crew_td/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -35,6 +36,9 @@ class AuthService {
           email: email,
           password: password);
       User? user = userCredential.user;
+
+      await DatabaseService(uid: user!.uid).updateUserData("0", "Trevor", 4);
+
       return user;
 
     }catch (e){
