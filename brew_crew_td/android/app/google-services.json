@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1046786639072",
+    "firebase_url": "https://brew-crew-td-default-rtdb.firebaseio.com",
     "project_id": "brew-crew-td",
     "storage_bucket": "brew-crew-td.appspot.com"
   },
