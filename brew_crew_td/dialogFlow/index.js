@@ -39,12 +39,16 @@ const dialogFlowFulfillment = (request, response) => {
         const db = admin.database();
         const ref = db.ref();
 
-        ref.on('value', (snapshot) => {
+        return ref.on('value', (snapshot) => {
             console.log(snapshot.val());
         }, (errorObject) => {
             console.log('The read failed' + errorObject.name);
         
         });
+
+        //snapshot.val().forEach(function(childNodes) {
+          //  console.log(childNodes.key);
+        //});
         
         /*
         return admin.database().ref("brews").once("value").then((snapshot) => {
